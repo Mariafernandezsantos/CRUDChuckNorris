@@ -13,8 +13,7 @@ interface ChuckNorrisJoke {
 export class ResultsComponent implements OnInit {
   jokes: string[] = [];
   startIndex: number = 1;
-  loading: boolean = true; // Agrega la propiedad loading
-
+  loading: boolean = true; 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {

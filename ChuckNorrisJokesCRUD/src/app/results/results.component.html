@@ -1,56 +1,61 @@
 <nav class="navbar navbar-custom">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="./assets/logo.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-        Chuck Norris Jokes
-      </a>
-    </div>
-  </nav>
-
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      Chuck Norris Jokes
+    </a>
+  </div>
+</nav>
 
 <div class="createDiv">
-        <button (click)="createJoke()" type="button" class="btn btn-primary btn-lg">Create a Joke</button>
-    </div>
+  <button (click)="createJoke()" type="button" class="btn btn-primary">
+    Create a Joke
+  </button>
+</div>
 
-    <div *ngIf="loading" class="d-flex justify-content-center">
-        <div class="spinner-border" role="status">
-          <span class="sr-only"></span>
-          </div>
-      </div>
-
-
-
-
+<div *ngIf="loading" class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
 <div class="loadingDiv">
-    <div *ngIf="loading">
-      </div>
+  <div *ngIf="loading"></div>
 </div>
 <div class="tableDiv">
-<div *ngIf="jokes.length > 0" class="tableDiv2">
-  <table *ngIf="!loading" class="table">
-    <thead class="table-danger">
-      <tr class="table-danger">
-        <th class="table-danger">ID</th>
-        <th class="table-danger">Joke</th>
-        <th class="table-danger">Edit</th>
-        <th class="table-danger">Delete</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div *ngIf="jokes.length > 0" class="tableDiv2">
+    <table *ngIf="!loading" class="table">
+      <thead class="table-danger">
+        <tr class="table-danger">
+          <th class="table-danger">ID</th>
+          <th class="table-danger">Joke</th>
+          <th class="table-danger">Edit</th>
+          <th class="table-danger">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr *ngFor="let joke of jokes; let i = index">
-            <td>{{ startIndex + i }}</td>
-            <td>{{ joke }}</td>
-            <td><button (click)="modifyJoke(i)" type="button" class="btn btn-outline-warning">Edit</button></td>
-            <td><button (click)="deleteJoke(i)" type="button" class="btn btn-outline-danger">Delete</button></td>
-          </tr>
-    </tbody>
-  </table>
+          <td>{{ startIndex + i }}</td>
+          <td>{{ joke }}</td>
+          <td>
+            <button
+              (click)="modifyJoke(i)"
+              type="button"
+              class="btn btn-outline-warning"
+            >
+              Edit
+            </button>
+          </td>
+          <td>
+            <button
+              (click)="deleteJoke(i)"
+              type="button"
+              class="btn btn-outline-danger"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-</div>
-<nav class="navbar bg-body-tertiary">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
-      </a>
-    </div>
-  </nav>
+
